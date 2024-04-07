@@ -4,6 +4,38 @@
 
 This document provides a comprehensive overview of the Dog Shelter Database. Designed to streamline the management of dog records, adoptions, treatments, volunteer involvement, and specialized care, this database system facilitates efficient shelter operations through structured data organization and relationship mapping.
 
+### Assumptions
+1. **Unique Identification**:
+    - Every dog in the shelter is uniquely identified by a `chip_number`.
+    - Every person (including volunteers and adopters) is uniquely identified by an `id`.
+
+2. **Dog Information**:
+    - The database stores essential information about each dog, including name, birth date, gender, and admission date.
+
+3. **Person Information**:
+    - The database keeps a record of people associated with the shelter, including their first name, last name, and phone number.
+
+4. **Volunteer Management**:
+    - Volunteers are special cases of people who have taken an active role in the shelter.
+    - Each volunteer is identified by their `Person_id`, ensuring a direct link to their personal information.
+    - Volunteers have statuses to indicate whether they are currently active.
+
+5. **Treatment Records**:
+    - The database maintains a list of treatments that can be administered to dogs, such as vaccinations, microchipping, and sterilization.
+    - A dog can receive multiple treatments, and this relationship is managed through the `Dog_Treatment` table.
+
+6. **Adoption Process**:
+    - The adoption table records each adoption case, linking dogs to their new owners and the volunteer who facilitated the adoption.
+    - Each adoption case has a status (e.g., 'Adopted', 'Available for adoption', 'In progress') to track the current state of the adoption process.
+
+7. **Volunteer Specializations**:
+    - Volunteers can have specializations (e.g., Veterinarian, Behaviorist, Dog Trainer), allowing the shelter to utilize their skills effectively.
+    - The `Specializations` table links volunteers to their respective specializations.
+
+8. **Shelter Care**:
+    - The database tracks which volunteer is taking care of which dog through the `ShelterCare` table, indicating direct responsibility and care activities.
+
+
 ## Table of Contents
 
 1. [Introduction](#introduction)
